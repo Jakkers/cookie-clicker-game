@@ -1,3 +1,31 @@
 * {
   background-color: antiquewhite;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#cookieBtn {
+  display: flex;
+  font-size: 30vh;
+  border-style: none;
+}
+
+#cookieBtn:active {
+  display: flex;
+  opacity: 50%;
+  border-style: none;
+}
+
+.shopItemContainer {
+  display: flex;
+  overflow: scroll;
+}
+
+.ShopItemBox {
+  display: inline;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
 }

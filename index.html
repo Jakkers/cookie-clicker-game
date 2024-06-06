@@ -4,12 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <script type="module" src="./app,js" defer></script>
+    <script type="module" src="./app.js" defer></script>
     <title>Cookie clicker game</title>
   </head>
   <body>
-    <header><h1>Cookies inc</h1></header>
-    <main></main>
-    <footer></footer>
+    <header>
+      <h1>Cookies inc</h1>
+    </header>
+    <main>
+      <!-- column/row 1 - the game  -->
+      <div id="gameWindow">
+        <h1 id="cookieTotal">0 total cookies</h1>
+        <h2 id="cookiesPerSecond">0 CPS (Cookies per second)</h2>
+        <!-- the start button is the cookie -->
+        <button id="cookieBtn">🍪</button>
+        <button id="reset">Reset</button>
+      </div>
+      <!-- column/row 2 - the shop  -->
+      <div id="storeWindow">
+        <h2>Store</h2>
+        <div class="shopItemContainer"></div>
+      </div>
+    </main>
+    <footer>Made by Jake</footer>
   </body>
 </html>
