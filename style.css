@@ -18,14 +18,35 @@
 
 .shopItemContainer {
   display: flex;
-  overflow: scroll;
+  flex-direction: column;
+  width: 30vw;
+  align-items: center;
 }
 
 .ShopItemBox {
-  display: inline;
+  display: flex;
 }
 
 footer {
   position: absolute;
   bottom: 0;
+}
+
+.mainContainer {
+  display: flex;
+}
+
+#storeWindow {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  right: 0;
+}
+
+.mainColumn {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
