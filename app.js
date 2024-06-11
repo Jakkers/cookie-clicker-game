@@ -2,7 +2,7 @@ console.log("hi");
 
 // I need a global variable to store the value of the cookies
 let cookieCounter = 0;
-let cps = 0;
+let cps = 1;
 
 let shopItemContainer = document.querySelector(".shopItemContainer");
 
@@ -75,9 +75,7 @@ function updateDisplay() {
   //update the DOM element containing the value of cookieCounter (could call inside load the game)
   //update the content value of the cookies from local storage (current total)
   const retrievedCPS = localStorage.getItem("cps");
-
   const parsedCPS = JSON.parse(retrievedCPS);
-
   console.log(parsedCPS);
 }
 
@@ -108,7 +106,7 @@ function renderShop() {
 
     //set attributes
     newButton.textContent = "Buy";
-    newButton.id = `${item.id}`;
+    newButton.id = `item${item.id}`;
     makeName.className = "ShopItemBox";
     makeName.textContent = `${item.name} cost: ${item.cost} increase: ${item.increase}`;
 
@@ -120,33 +118,37 @@ function renderShop() {
 }
 
 //making the shop items clickable
-const item1 = document.getElementById("1");
-console.log(item1);
-const item2 = document.getElementById("2");
-const item3 = document.getElementById("3");
-const item4 = document.getElementById("4");
-const item5 = document.getElementById("5");
-const item6 = document.getElementById("6");
-const item7 = document.getElementById("7");
-const item8 = document.getElementById("8");
-const item9 = document.getElementById("9");
-const item10 = document.getElementById("10");
+let autoClickerBuy = document.getElementById("item1");
+console.log();
+let enchancedOvenBuy = document.getElementById("item2");
+let cookieFarmBuy = document.getElementById("item3");
+let robotBakerBuy = document.getElementById("item4");
+let cookieFactoryBuy = document.getElementById("item5");
+let magicFlourBuy = document.getElementById("item6");
+let timeMachineBuy = document.getElementById("item7");
+let quantumOvenBuy = document.getElementById("item8");
+let alienTechnologyBuy = document.getElementById("item9");
+let interdimensionalBakerBuy = document.getElementById("item10");
 
-//buy item 1
-item1.addEventListener("click", function () {
-  let cpsCounter = cps++;
-  cookiesPerSecond.innerText = `${cpsCounter} cookies per second`;
-});
-//concider adding cookie banner
+// Buying an item
+function autoClickerBuyClicked() {
+  if (cookieCounter >= 100) {
+    cookieCounter = cookieCounter - 100;
+  } else {
+    alert("Not enough cookies");
+  }
+}
+
+autoClickerBuy.addEventListener("click", autoClickerBuyClicked);
 
 //we need a timer to increase the cookies we get every second
 setInterval(function () {
-  let cpsCounter = cps + 1;
+  let cps = cps + 1;
   cookiesPerSecond.innerText = `${cpsCounter} cookies per second`;
-  console.log("this repeats");
+  console.log("tick");
   //increase the value of cookieCounter by one every second
   //I want update the value displayed on the page (or you could have this in a separate function that you call inside the interval, for example, updateDisplay())
   //I want to update the value in local storage (or you could have this in a separate function that you call inside the interv, for example, saveLocalStorage())
 }, 1000);
 
-setInterval();
+// setInterval();
